@@ -13,5 +13,7 @@
             <br>
             <input type="submit" value="Age next birthday">
         </form>
+        
+        <p>${message}</p>
     </body>
 </html>
