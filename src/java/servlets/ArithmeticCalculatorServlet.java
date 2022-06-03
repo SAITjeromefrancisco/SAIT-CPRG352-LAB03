@@ -31,6 +31,9 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         String firstInput = request.getParameter("first_input");
         String secondInput = request.getParameter("second_input");
         
+        request.setAttribute("first",firstInput);
+        request.setAttribute("second",secondInput);
+        
         try{
             // force exception now because empty statements also show "invalid" message
             int first = Integer.parseInt(firstInput);

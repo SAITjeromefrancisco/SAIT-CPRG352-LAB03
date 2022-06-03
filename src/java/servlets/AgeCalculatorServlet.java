@@ -18,6 +18,7 @@ public class AgeCalculatorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        request.setAttribute("input","");
 
         getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
         return;
@@ -27,9 +28,10 @@ public class AgeCalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
+            
             String ageInput = request.getParameter("age_input");
             
-            
+            request.setAttribute("input",ageInput);
             // do a simple try/catch for NumberFormatException to catch alphabetical inputs
             // this triggers the error message on catch
             // nomral code executes if nothing is caught
